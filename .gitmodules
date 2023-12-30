@@ -2,3 +2,6 @@
 	path = /home/src/biostudies/utils/helper
 	url = https://github.com/TranscriptomeDB-CU-Project/data-cleaning
 	branch = main
+[submodule "utils/helper"]
+	path = utils/helper
+	url = https://github.com/TranscriptomeDB-CU-Project/mageai-poc.git
