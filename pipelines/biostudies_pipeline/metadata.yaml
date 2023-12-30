@@ -154,7 +154,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2023-12-30 08:32:38'
+updated_at: '2023-12-30 08:52:19'
 uuid: biostudies_pipeline
 variables:
   MONGO_URI: mongodb://airflowbiostudies:apacheairflowwithbiostudies@mongo:27017/?retryWrites=true&w=majority
