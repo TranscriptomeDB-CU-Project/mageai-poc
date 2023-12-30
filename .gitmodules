@@ -1,3 +1,3 @@
 [submodule "utils/helper"]
 	path = utils/helper
-	url = https://github.com/TranscriptomeDB-CU-Project/mageai-poc.git
+	url = https://github.com/TranscriptomeDB-CU-Project/data-cleaning.git
