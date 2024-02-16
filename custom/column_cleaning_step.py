@@ -1,4 +1,4 @@
-from biostudies.utils.helper.column_cleaning import column_cleaning
+from biostudies.utils.basic_cleaning.column_cleaning import column_cleaning
 import os
 
 if 'custom' not in globals():
@@ -20,5 +20,4 @@ def transform(data, *args, **kwargs):
         Anything (e.g. data frame, dictionary, array, int, str, etc.)
     """
     # Specify your transformation logic here
-    os.chdir("/home/src/data")
-    column_cleaning()
+    column_cleaning(attribute_path="/home/src/data/attribute.txt", column_path="/home/src/data/column_name.txt", column_cleaned_path="/home/src/data/column_name_cleaned.txt")

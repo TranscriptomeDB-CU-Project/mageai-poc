@@ -21,5 +21,12 @@ def transform(*args, **kwargs):
     """
     # Specify your transformation logic here
 
-    os.chdir("/home/src/data")
-    file_cleaning()
+    column_name = read_column_mapping("/home/src/data/column_name_cleaned.txt")
+    file_list = os.listdir("/home/src/data/sdrf")
+
+    if not os.path.exists("/home/src/data/sdrf_cleaned"):
+        os.mkdir("/home/src/data/sdrf_cleaned")
+
+    for file in file_list:
+        accession = file.split(".")[0]
+        file_cleaning(accession, f"/home/src/data/sdrf/{file}", f"/home/src/data/sdrf_cleaned/{file}", column_name)

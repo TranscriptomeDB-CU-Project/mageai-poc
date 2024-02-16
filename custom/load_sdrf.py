@@ -15,11 +15,9 @@ def load_data_from_api(**kwargs) -> None:
     """
 
     MONGO_URI = kwargs['MONGO_URI']
-    subprocess.run(["/home/src/biostudies/utils /home/src/data"], 
+    subprocess.run(["/home/src/biostudies/main /home/src/data"], 
         shell=True,
         check=True,
-        stdout=subprocess.PIPE
-        stderr=subprocess.STDOUT, 
         env={
             "MONGO_URI": MONGO_URI
         }

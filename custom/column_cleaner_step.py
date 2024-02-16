@@ -1,5 +1,5 @@
 import os
-from biostudies.utils.helper.extract_header import extract_header
+from biostudies.utils.basic_cleaning.column_cleaning import column_cleaning
 
 if 'custom' not in globals():
     from mage_ai.data_preparation.decorators import custom
@@ -18,5 +18,5 @@ def transform_custom(*args, **kwargs):
     Returns:
         DataFrame: Transformed data frame
     """
-    extract_header(sdrf_path="/home/src/data/sdrf", column_name_path="/home/src/data/column_name.txt", attribute_path="/home/src/data/attribute.txt")
-
+    column_cleaning(attribute_path="/home/src/data/attribute.txt", column_path="/home/src/data/column_name.txt", column_cleaned_path="/home/src/data/column_name_cleaned.txt")
+    print("Column cleaning done")
