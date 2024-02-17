@@ -23,4 +23,4 @@ def transform_custom(*args, **kwargs):
     if not os.path.exists("/home/src/data/sdrf_cleaned_depth"):
         os.mkdir("/home/src/data/sdrf_cleaned_depth")
 
-    cleaner.clean_all("/home/src/data/sdrf_cleaned", "/home/src/data/sdrf_cleaned_depth")
+    cleaner.clean_all("/home/src/data/sdrf_cleaned", "/home/src/data/sdrf_cleaned_depth", parallel=True, thread_num=4)
