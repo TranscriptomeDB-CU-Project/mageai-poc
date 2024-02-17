@@ -77,7 +77,7 @@ blocks:
   language: python
   name: column_groupping
   retry_config: null
-  status: failed
+  status: executed
   timeout: null
   type: custom
   upstream_blocks:
@@ -93,7 +93,7 @@ blocks:
   language: python
   name: in_depth_cleaning
   retry_config: null
-  status: failed
+  status: updated
   timeout: null
   type: custom
   upstream_blocks:
@@ -120,7 +120,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-17 09:55:03'
+updated_at: '2024-02-17T12:36:51+00:00'
 uuid: biostudies_pipeline
 variables:
   MONGO_URI: mongodb://airflowbiostudies:apacheairflowwithbiostudies@mongo:27017/?retryWrites=true&w=majority
