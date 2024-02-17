@@ -1,4 +1,4 @@
-from biostudies.utils.basic_cleaning.file_cleaning import file_cleaning
+from biostudies.utils.basic_cleaning.file_cleaning import file_cleaning, read_column_mapping
 import os
 
 if 'custom' not in globals():

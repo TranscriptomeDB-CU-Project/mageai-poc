@@ -1,5 +1,5 @@
 import os
-from biostudies.utils.helper.extract_header import extract_header
+from biostudies.utils.basic_cleaning.extract_header import extract_header
 
 if 'custom' not in globals():
     from mage_ai.data_preparation.decorators import custom

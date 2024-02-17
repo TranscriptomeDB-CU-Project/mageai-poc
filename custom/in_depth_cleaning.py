@@ -1,3 +1,5 @@
+from biostudies.utils.in_depth_cleaning.in_depth_cleaning import InDepthCleaning
+
 if 'custom' not in globals():
     from mage_ai.data_preparation.decorators import custom
 if 'test' not in globals():
