@@ -1,7 +1,5 @@
 import os
-os.chdir("/home/src/biostudies/utils/in_depth_cleaning")
-from biostudies.utils.in_depth_cleaning.in_depth_cleaning import InDepthCleaning
-os.chdir("/home/src")
+
 
 if 'custom' not in globals():
     from mage_ai.data_preparation.decorators import custom
@@ -11,6 +9,9 @@ if 'test' not in globals():
 
 @custom
 def transform_custom(*args, **kwargs):
+    import sys
+    sys.path.append('/home/src/biostudies/utils/in_depth_cleaning')
+    from biostudies.utils.in_depth_cleaning.in_depth_cleaning import InDepthCleaning
     """
     args: The output from any upstream parent blocks (if applicable)
 
