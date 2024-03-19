@@ -86,7 +86,8 @@ blocks:
 - all_upstream_blocks_executed: false
   color: yellow
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - count_header
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -99,6 +100,39 @@ blocks:
   upstream_blocks:
   - column_groupping
   uuid: in_depth_cleaning
+- all_upstream_blocks_executed: false
+  color: grey
+  configuration: {}
+  downstream_blocks:
+  - load_to_elasticsearch
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: count_header
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - in_depth_cleaning
+  uuid: count_header
+- all_upstream_blocks_executed: false
+  color: grey
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_to_elasticsearch
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - count_header
+  uuid: load_to_elasticsearch
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -120,9 +154,9 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-25 16:31:01'
 uuid: biostudies_pipeline
 variables:
+  ELASTICSEARCH_URI: http://elasticsearch:9200
   MONGO_URI: mongodb://airflowbiostudies:apacheairflowwithbiostudies@mongo:27017/?retryWrites=true&w=majority
 variables_dir: /home/src/mage_data/biostudies
 widgets: []
