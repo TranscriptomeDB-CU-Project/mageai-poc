@@ -127,7 +127,7 @@ blocks:
   language: python
   name: load_to_elasticsearch
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: custom
   upstream_blocks:

@@ -9,6 +9,7 @@ def transform_custom(*args, **kwargs):
     ELASTICSEARCH_URI = kwargs["ELASTICSEARCH_URI"]
 
     es = Elasticsearch(hosts=ELASTICSEARCH_URI)
+    es.indices.delete(index="biostudies_column_name", ignore=[400, 404])
 
     column_count, mapping_schema = read_count_header_file("/home/src/data/count_header.txt")
 
