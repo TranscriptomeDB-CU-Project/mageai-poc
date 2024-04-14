@@ -1,0 +1,99 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: teal
+  configuration:
+    file_source:
+      path: custom/extract_header_step.py
+  downstream_blocks:
+  - column_cleaning_step
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: extract_header_step
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: custom
+  upstream_blocks: []
+  uuid: extract_header_step
+- all_upstream_blocks_executed: false
+  color: teal
+  configuration:
+    file_source:
+      path: custom/column_cleaning_step.py
+  downstream_blocks:
+  - file_cleaning_step
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: column_cleaning_step
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - extract_header_step
+  uuid: column_cleaning_step
+- all_upstream_blocks_executed: false
+  color: teal
+  configuration:
+    file_source:
+      path: custom/file_cleaning_step.py
+  downstream_blocks:
+  - column_groupping
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: file_cleaning_step
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - column_cleaning_step
+  uuid: file_cleaning_step
+- all_upstream_blocks_executed: false
+  color: teal
+  configuration:
+    file_source:
+      path: custom/column_groupping.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: column_groupping
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - file_cleaning_step
+  uuid: column_groupping
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-04-14 09:19:29.400450+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Column Cleaning
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: column_cleaning
+variables_dir: /home/src/mage_data/biostudies
+widgets: []
