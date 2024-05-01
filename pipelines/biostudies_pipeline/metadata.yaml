@@ -110,7 +110,7 @@ blocks:
   language: python
   name: load_to_elasticsearch
   retry_config: null
-  status: executed
+  status: failed
   timeout: null
   type: custom
   upstream_blocks:
@@ -140,6 +140,6 @@ type: python
 uuid: biostudies_pipeline
 variables:
   ELASTICSEARCH_URI: http://elasticsearch:9200
-  MONGO_URI: mongodb://airflowbiostudies:apacheairflowwithbiostudies@mongo:27017/?retryWrites=true&w=majority
+  MONGO_URI: mongodb://airflowbiostudies:CLY6kxTC5b8Bl0dobuo1cw7k8@mongo:27017/?retryWrites=true&w=majority
 variables_dir: /home/src/mage_data/biostudies
 widgets: []
