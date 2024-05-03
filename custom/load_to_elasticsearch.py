@@ -16,7 +16,12 @@ def transform_custom(*args, **kwargs):
     try:
         es.delete_by_query(index="biostudies_column_name", body={"query": {"match_all": {}}})
     except:
-        pass
+        print('Something went wrong with column name')
+    
+    try:
+        es.indices.delete(index="biostudies", ignore=[400, 404])
+    except:
+        print('Something went wrong with samples')
 
     timestamp = read_fetching_date(mongoClient)
 
@@ -28,6 +33,7 @@ def transform_custom(*args, **kwargs):
     file_list = os.listdir("/home/src/data/sdrf_cleaned_depth")
 
     for file in file_list:
+        print(f"Try to insert {file}")
         load_csv_to_elasticsearch(es, f'/home/src/data/sdrf_cleaned_depth/{file}', column_count, timestamp)
         print(f"File {file} has been loaded to Elasticsearch")
     
